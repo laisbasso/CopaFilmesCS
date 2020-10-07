@@ -9,16 +9,18 @@ namespace CopaFilmesAPI.Models
 {
     public class FilmeModel
     {
-        [JsonProperty("id")]
-        public string id { get; set; }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-        [JsonProperty("titulo")]
-        public string titulo { get; set; }
+        [JsonPropertyName("titulo")]
+        public string Titulo { get; set; }
 
-        [JsonProperty("ano")]
-        public int ano { get; set; }
+        [JsonPropertyName("ano")]
+        public int Ano { get; set; }
 
-        [JsonProperty("nota")]
-        public decimal nota { get; set; }
+        [JsonPropertyName("nota")]
+        public decimal Nota { get; set; }
     }
+
+
 }

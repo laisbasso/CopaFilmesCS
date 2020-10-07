@@ -65,12 +65,35 @@ namespace CopaFilmesAPI.Controllers
 
         }
 
+List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
+
+        public List<FilmeModel> faseEliminatoria(List<FilmeModel> ListaFilmes)
+        {
+            // já recebo a lista ordenada
+
+            int posicaoB = ListaFilmes.Count-1;
+
+            for (int posicaoA = 0; posicaoA < posicaoB; posicaoA++)
+            {
+               int posicaoVencedora = ListaFilmes[posicaoA].Nota > ListaFilmes[posicaoB].Nota ?
+                    posicaoA : posicaoB;
+
+                FilmesVencedores.Add(ListaFilmes[posicaoVencedora]);
+                posicaoB--;
+            }
+
+            return FilmesVencedores;
+
+        }
+
         [HttpPost]
         public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes)
         {
-            gerarOrdemAlfabetica(ListaFilmes);
+            List<FilmeModel> ListaAlfabetica = gerarOrdemAlfabetica(ListaFilmes);
 
-            return ListaFilmes;
+            List<FilmeModel> ListaSemifinal = faseEliminatoria(ListaAlfabetica);
+
+            return ListaAlfabetica;
 
         }
 

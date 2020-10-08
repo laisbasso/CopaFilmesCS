@@ -65,13 +65,17 @@ namespace CopaFilmesAPI.Controllers
 
         }
 
-List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
+        List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
 
         public List<FilmeModel> faseEliminatoria(List<FilmeModel> ListaFilmes)
         {
             // já recebo a lista ordenada
 
             int posicaoB = ListaFilmes.Count-1;
+
+            // limpa a lista porque faz a verificação duas vezes
+            // hmm acho que não vai dar certo kk
+            // FilmesVencedores.Clear();
 
             for (int posicaoA = 0; posicaoA < posicaoB; posicaoA++)
             {
@@ -80,6 +84,17 @@ List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
 
                 FilmesVencedores.Add(ListaFilmes[posicaoVencedora]);
                 posicaoB--;
+            }
+
+            // verificação da lista final
+            if (FilmesVencedores.Count == 2)
+            {
+                if (FilmesVencedores[0].Nota < ListaFilmes[posicaoB].Nota)
+                {
+                    FilmeModel trocarElemento = FilmesVencedores[0];
+                    FilmesVencedores[0] = FilmesVencedores[1];
+                    FilmesVencedores[1] = trocarElemento;
+                }
             }
 
             return FilmesVencedores;
@@ -93,7 +108,9 @@ List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
 
             List<FilmeModel> ListaSemifinal = faseEliminatoria(ListaAlfabetica);
 
-            return ListaAlfabetica;
+            List<FilmeModel> ListaFinal = faseEliminatoria(ListaSemifinal);
+
+            return ListaFinal;
 
         }
 

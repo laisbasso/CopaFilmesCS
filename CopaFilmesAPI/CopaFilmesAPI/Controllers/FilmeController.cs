@@ -13,11 +13,7 @@ namespace CopaFilmesAPI.Controllers
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
-
         private readonly IHttpClientFactory _clientFactory;
-
-        public IEnumerable<FilmeModel> ListaIEnumerable { get; set; }
-        public List<FilmeModel> ListaFilmes { get; set; }
 
         // construtor
         public FilmeController(IHttpClientFactory clientFactory)
@@ -25,7 +21,9 @@ namespace CopaFilmesAPI.Controllers
             _clientFactory = clientFactory;
         }
 
-        // funciona!!!!!! não retorna mais a pág inteira, só os dados
+        public IEnumerable<FilmeModel> ListaIEnumerable { get; set; }
+        public List<FilmeModel> ListaFilmes;
+
         [HttpGet]
         public async Task<List<FilmeModel>> GetAllFilmes()
         {
@@ -54,7 +52,6 @@ namespace CopaFilmesAPI.Controllers
             }
 
             return ListaFilmes;
-
         }
 
         public List<FilmeModel> gerarOrdemAlfabetica(List<FilmeModel> ListaFilmes)
@@ -62,62 +59,54 @@ namespace CopaFilmesAPI.Controllers
             ListaFilmes.Sort((x, y) => string.Compare(x.Titulo, y.Titulo));
 
             return ListaFilmes;
-
         }
-
-        List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
 
         public List<FilmeModel> faseEliminatoria(List<FilmeModel> ListaFilmes)
         {
-            // já recebo a lista ordenada
+            List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
 
-            int posicaoB = ListaFilmes.Count-1;
-
-            // limpa a lista porque faz a verificação duas vezes
-            // hmm acho que não vai dar certo kk
-            // FilmesVencedores.Clear();
+            int posicaoB = ListaFilmes.Count()-1;
 
             for (int posicaoA = 0; posicaoA < posicaoB; posicaoA++)
             {
-               int posicaoVencedora = ListaFilmes[posicaoA].Nota > ListaFilmes[posicaoB].Nota ?
+               int posicaoVencedora = ListaFilmes[posicaoA].Nota >= ListaFilmes[posicaoB].Nota ?
                     posicaoA : posicaoB;
 
                 FilmesVencedores.Add(ListaFilmes[posicaoVencedora]);
                 posicaoB--;
             }
 
-            // verificação da lista final
-            if (FilmesVencedores.Count == 2)
+            return FilmesVencedores;
+        }
+
+        public List<FilmeModel> ultimoCombate(List<FilmeModel> ListaFilmes)
+        {
+            FilmeModel trocarElemento;
+
+            if (ListaFilmes[0].Nota < ListaFilmes[1].Nota)
             {
-                if (FilmesVencedores[0].Nota < ListaFilmes[posicaoB].Nota)
-                {
-                    FilmeModel trocarElemento = FilmesVencedores[0];
-                    FilmesVencedores[0] = FilmesVencedores[1];
-                    FilmesVencedores[1] = trocarElemento;
-                }
+                trocarElemento = ListaFilmes[0];
+                ListaFilmes[0] = ListaFilmes[1];
+                ListaFilmes[1] = trocarElemento;
             }
 
-            return FilmesVencedores;
-
+            return ListaFilmes;
         }
+
+        List<FilmeModel> ListaAlfabetica;
+        List<FilmeModel> ListaSemifinal;
+        List<FilmeModel> ListaFinal;
+        List<FilmeModel> ListaVencedores;
 
         [HttpPost]
         public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes)
         {
-            List<FilmeModel> ListaAlfabetica = gerarOrdemAlfabetica(ListaFilmes);
+            ListaAlfabetica = gerarOrdemAlfabetica(ListaFilmes);
+            ListaSemifinal = faseEliminatoria(ListaAlfabetica);
+            ListaFinal = faseEliminatoria(ListaSemifinal);
+            ListaVencedores = ultimoCombate(ListaFinal);
 
-            List<FilmeModel> ListaSemifinal = faseEliminatoria(ListaAlfabetica);
-
-            List<FilmeModel> ListaFinal = faseEliminatoria(ListaSemifinal);
-
-            return ListaFinal;
-
+            return ListaVencedores;
         }
-
-
-
-
-
-
      }
 }

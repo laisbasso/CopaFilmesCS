@@ -1,0 +1,60 @@
+<div class="container w-100 pl-5">
+
+  <!-- BARRA DO TÍTULO, CONTADOR E BOTÃO GERAR -->
+  <div class="row w-100 mt-5 position-sticky sticky-top" *ngIf="router.url === '/campeonato'">
+    <div class="col-md-12">
+      <div class="position-sticky  bg-black d-flex flex-wrap justify-content-around p-3 text-light">
+          <h1 class="display-4">CAMPEONATO DE FILMES</h1>
+
+          <span class="pt-4" *ngIf='this.filmesSelecionados.length < 8'>Selecione mais
+            <span>{{8-filmesSelecionados.length}}</span> filme<span *ngIf='this.filmesSelecionados.length < 7'>s</span></span>
+            
+              <button class="btn red-button" (click)="postFilmes()" *ngIf='this.filmesSelecionados.length == 8'>GERAR
+          CAMPEONATO</button>
+        
+      </div>
+    </div>
+  </div>
+  <!-- BARRA DO TÍTULO, CONTADOR E BOTÃO GERAR -->
+
+  <div class="row w-100 mt-5 justify-content-center">
+    <div class="col-md-12">
+      <div class="card-columns">
+
+        <!-- TICKETS -->
+        <div class="" *ngFor="let filme of listaFilmes" id="{{filme.id}}">
+          <div class="card toggle-borda-card bg-light border-bottom-0">
+
+            <div class="card-body">
+              <h4 class="card-title">{{filme.titulo}}</h4>
+
+              <div class="d-flex justify-content-between">
+                <h2 class="barcode d-flex align-text-bottom">{{filme.id}}</h2>
+                <div class="text-right align-text-bottom pt-4">
+                  <h6>Lançado em</h6>
+                  <h5 class="mb-0">{{filme.ano}}</h5>
+                </div>
+
+              </div>
+            </div>
+
+            <hr>
+
+            <!-- arrumar a msg e a borda dps -->
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn rounded-pill mr-3 mb-3 px-4 dark-red-button btn-selecionar"
+                id="{{filme.titulo}}" (click)="adicionar(filme)" ng-model="selected">
+                <span *ngIf='this.filmes.isSelected'>SELECIONAR</span>
+                <span ng-selected="selected"> ~ DES </span>
+            </button>
+            </div>
+
+          </div>
+        </div>
+        <!-- /TICKETS -->
+
+      </div>
+    </div>
+  </div>
+
+</div>

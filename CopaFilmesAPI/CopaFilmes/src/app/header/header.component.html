@@ -1,0 +1,26 @@
+<div class="container w-100 mt-5 mb-5">
+    <div class="row w-100">
+        <div class="col-md-12">
+            <header class="mb-5">
+                <img *ngIf="router.url === '/campeonato'" alt="Um rapaz negro vestindo terno preto posa segurando uma estatueta vermelha, ao seu lado está uma mulher de cabelos loiros e vestido longo preto, também segurando uma estatueta com as duas mãos. Ao fundo existem estatuetas maiores e de cor branca para ilustrar o cenário." src="../../assets/undraw_awards_fieb.svg" class="w-100">
+                <img *ngIf="router.url === '/resultado'" alt="Um enorme balde de pipoca cinza escuro com listras horizontais vermelhas, ao lado de um copo de refrigerante com canudo e um óculos 3d com lentes coloridas." src="../../assets/undraw_movie_night_fldd.svg" class="w-100">
+            </header>
+        </div>
+    </div>
+
+    <div class="row w-100 mt-5">
+        <div class="col-md-12">
+            <section class="text-center text-light m-5" *ngIf="router.url === '/campeonato'">                
+                <p>
+                    Cansado de gastar horas escolhendo um filme e acabar com o balde de pipoca antes mesmo de dar play?
+                </p>
+                <p>
+                    O Campeonato de Filmes nasceu para fazer o match perfeito entre você e o mundo cinematográfico.
+                </p>
+                <p>
+                    Pegue seus 8 tickets e vamos te mostrar quais títulos mais conquistaram o coração do público! 
+                </p>
+            </section>
+        </div>
+    </div>
+</div>

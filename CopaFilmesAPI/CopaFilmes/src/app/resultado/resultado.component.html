@@ -1,0 +1,66 @@
+<div class="container w-100 pl-4 justify-content-around">
+
+    <div class="row w-100 mt-5 position-sticky sticky-top">
+      <div class="col-md-12">
+        <div class="position-sticky bg-black d-flex flex-wrap justify-content-around p-3 text-light">
+          <h1 class="display-4">CAMPEONATO DE FILMES</h1>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row w-100 mt-5 justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-light text-center mb-5">E os mais votados foram...</h2>
+        <span class="mt-5"></span>
+  
+        <!-- TICKETS RESULTADO -->
+        <div class="" *ngFor="let filme of listaFilmes">
+          <div class="card bg-light border-bottom-0">
+            <div class="d-flex flex-wrap">
+  
+              <!-- AVALIAÇÃO -->
+              <div class="card-body text-center set-w-card">
+                <h4 class="card-title text-bold">Avaliação: {{filme.nota}}</h4>
+                <img src="../../assets/prize.png" alt="Medalha com fita vermelha.">
+              </div>
+              <!-- /AVALIAÇÃO -->
+  
+              <div class="vl"></div>
+  
+              <!-- INFOS DO FILME -->
+              <div class="card-body">
+                <h2 class="card-title text-bold">{{filme.titulo}}</h2>
+                <div class="d-flex justify-content-between">
+                  <h2 class="barcode d-flex align-text-bottom">{{filme.id}}</h2>
+                  <div class="text-right align-text-bottom pt-4">
+                    <h6>Lançado em</h6>
+                    <h5 class="mb-0">{{filme.ano}}</h5>
+                  </div>
+                </div>
+              </div>
+              <!-- /INFOS DO FILME -->
+  
+              <div class="vl"></div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- /TICKETS RESULTADO -->
+  
+        <section class="text-center text-light m-5">
+          <p>
+            Agora é com você!
+          </p>
+          <p>
+            Pegue a pipoca quentinha, que o filme já vai começar!
+          </p>
+        </section>
+  
+      </div>
+    </div>
+  
+    <div class="row w-100 mb-5 justify-content-around">
+      <button class="btn dark-gray-button" (click)="voltar()">NOVO CAMPEONATO</button>
+    </div>
+  
+  </div>

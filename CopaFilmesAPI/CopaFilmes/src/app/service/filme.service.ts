@@ -10,16 +10,16 @@ export class FilmeService {
   constructor(public http: HttpClient) { }
 
   getAllFilmes(){
-    return this.http.get("http://localhost:61397/v1/filme")
+    return this.http.get("http://localhost:61397/filme/v1")
   }
 
-  // ainda n coloquei
-  //getListaFinal(){
-  //  return this.http.get("http://localhost:8080/api/resultado")
-  //}
+  getCampeoes(){
+    return this.http.get("http://localhost:61397/filme/v1/resultado")
 
-  postFilmes(filmes: Filme[]) {
-    return this.http.post('http://localhost:61397/v1/filme', filmes)
+  }
+
+  postFilmesSelecionados(filmes: Filme[]) {
+    return this.http.post('http://localhost:61397/filme/v1', filmes)
   }
 
 }

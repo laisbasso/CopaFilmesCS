@@ -16,13 +16,12 @@ body {
 }
 
 /* BARRINHA DO CONTADOR */
-.set-height{
-  min-height: 70px !important;
+
+.display-4{
+  font-size: clamp(20px, 5vw + 10px, 56px) !important;
 }
 
-.fixed-top-2 {
-  margin-top: 70px !important;
-}
+/* TICKETS */
 
 .card-columns {
   column-count: 3 !important;
@@ -36,16 +35,8 @@ body {
   min-width: 205px !important;
 }
 
-.toggle-borda-card{
-  border: 5px solid aquamarine !important;
-}
-
 h2 {
   margin-bottom: 0 !important;
-}
-
-.display-4{
-  font-size: clamp(20px, 5vw + 10px, 56px) !important;
 }
 
 .barcode {

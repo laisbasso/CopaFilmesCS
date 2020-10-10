@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Alfabetica.cs" />
+    <Compile Remove="Controllers\FilmeController.cs" />
+    <Compile Remove="ListaAlfabetica.cs" />
     <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
 

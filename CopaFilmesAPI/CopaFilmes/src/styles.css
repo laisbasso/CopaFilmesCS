@@ -52,6 +52,7 @@ hr {
 
 .vl {
   border-left: 4px dotted rgba(0, 0, 0, 0.5) !important;
+  margin-bottom: 5px !important;
 }
 
 /* BUTTONS */

@@ -18,18 +18,9 @@ export class ResultadoComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
-    this.getCampeoes()
-    this.listaFilmes
+    this.listaFilmes = this.filmeService.filmes; 
   }
-
-  getCampeoes() {
-    this.listaFilmes
-    this.filmeService.getCampeoes().subscribe((resp: Filme[]) => {
-      this.listaFilmes = resp;
-      console.log(this.listaFilmes)
-    });
-  }
-
+  
   voltar() {
     this.router.navigate(['/campeonato']);
   }

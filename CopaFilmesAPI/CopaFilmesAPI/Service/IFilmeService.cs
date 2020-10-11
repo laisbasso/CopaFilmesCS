@@ -8,12 +8,10 @@ namespace CopaFilmesAPI.Service
 {
     public interface IFilmeService
     {
-        // tirei async daqui
-        public Task<List<FilmeModel>> GetAllFilmes();
+        Task<List<FilmeModel>> GetAllFilmes(); // tirei async daqui
         List<FilmeModel> GerarOrdemAlfabetica(List<FilmeModel> ListaFilmes);
         List<FilmeModel> FaseEliminatoria(List<FilmeModel> ListaFilmes);
         List<FilmeModel> UltimoCombate(List<FilmeModel> ListaFilmes);
         List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes);
-        List<FilmeModel> ExibirCampeoes();
     }
 }

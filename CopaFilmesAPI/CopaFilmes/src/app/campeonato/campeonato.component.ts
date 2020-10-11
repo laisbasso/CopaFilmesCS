@@ -40,6 +40,7 @@ export class CampeonatoComponent implements OnInit {
       .subscribe((resp: Filme[]) => {
         this.listaFilmes = resp;
         console.log(this.listaFilmes);
+        this.filmeService.filmes = this.listaFilmes;
         this.router.navigate(['/resultado']);
       });
   }

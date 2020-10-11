@@ -7,18 +7,15 @@ import { Filme } from '../model/Filme';
 })
 export class FilmeService {
 
+  public filmes: Filme[]
+
   constructor(public http: HttpClient) { }
 
   getAllFilmes(){
     return this.http.get("http://localhost:61397/filme/v1")
   }
 
-  getCampeoes(){
-    return this.http.get("http://localhost:61397/filme/v1/resultado")
-  }
-
   postFilmesSelecionados(filmes: Filme[]) {
     return this.http.post('http://localhost:61397/filme/v1', filmes)
   }
-
 }

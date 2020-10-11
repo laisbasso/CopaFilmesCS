@@ -13,21 +13,18 @@ namespace CopaFilmesAPI.Service
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        //construtor
         public FilmeService(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }
 
-        public IEnumerable<FilmeModel> ListaIEnumerable { get; set; }
+        public IEnumerable<FilmeModel> ListaIEnumerable;
         public List<FilmeModel> ListaFilmes;
-
-        public List<FilmeModel> ListaTestezinho { get; set; }
 
         public async Task<List<FilmeModel>> GetAllFilmes()
         {
             var request = new HttpRequestMessage(HttpMethod.Get,
-                "http://copafilmes.azurewebsites.net/ai/filmes");
+                "http://copafilmes.azurewebsites.net/api/filmes");
 
             var client = _clientFactory.CreateClient();
 
@@ -95,26 +92,16 @@ namespace CopaFilmesAPI.Service
             return ListaFilmes;
         }
 
-        List<FilmeModel> ListaAlfabetica;
-        List<FilmeModel> ListaSemifinal;
-        List<FilmeModel> ListaFinal;
-        List<FilmeModel> ListaVencedores;
-
         public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes)
         {
+            List<FilmeModel> ListaAlfabetica, ListaSemifinal, ListaFinal, ListaVencedores;
+
             ListaAlfabetica = GerarOrdemAlfabetica(ListaFilmes);
             ListaSemifinal = FaseEliminatoria(ListaAlfabetica);
             ListaFinal = FaseEliminatoria(ListaSemifinal);
             ListaVencedores = UltimoCombate(ListaFinal);
 
-            ListaTestezinho = ListaVencedores;
-
             return ListaVencedores;
-        }
-
-        public List<FilmeModel> ExibirCampeoes()
-        {
-            return ListaTestezinho;
         }
     }
 }

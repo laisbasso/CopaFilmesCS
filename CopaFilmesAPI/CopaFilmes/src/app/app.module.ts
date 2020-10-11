@@ -10,6 +10,8 @@ import { ResultadoComponent } from './resultado/resultado.component';
 import { CampeonatoComponent } from './campeonato/campeonato.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,10 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

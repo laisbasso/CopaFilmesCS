@@ -14,6 +14,6 @@ namespace CopaFilmesAPI.Models
         public int Ano { get; set; }
 
         [JsonPropertyName("nota")]
-        public decimal Nota { get; set; }
+        public double Nota { get; set; }
     }
 }

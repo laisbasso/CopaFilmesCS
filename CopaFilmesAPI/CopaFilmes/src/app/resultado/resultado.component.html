@@ -12,19 +12,19 @@
       <div class="col-md-6">
         <h2 class="text-light text-center mb-5">E os mais votados foram...</h2>
         <span class="mt-5"></span>
-  
+
         <!-- TICKETS RESULTADO -->
-        <div class="" *ngFor="let filme of listaFilmes">
+         <div class="" *ngFor="let filme of listaFilmes">
           <div class="card bg-light border-bottom-0">
             <div class="d-flex flex-wrap">
   
-              <!-- AVALIAÇÃO -->
+               <!-- AVALIAÇÃO -->
               <div class="card-body text-center set-w-card pb-0">
                 <h2 class="card-title text-bold pb-4">Avaliação: {{filme.nota}}</h2>
                 <img src="../../assets/prize.png" alt="Medalha com fita vermelha.">
               </div>
-              <!-- /AVALIAÇÃO -->
-  
+               <!-- /AVALIAÇÃO  -->
+
               <div class="vl"></div>
   
               <!-- INFOS DO FILME -->
@@ -43,8 +43,7 @@
               <div class="vl"></div>
             </div>
           </div>
-        </div>
-  
+        </div> 
         <!-- /TICKETS RESULTADO -->
   
         <section class="text-center text-light m-5">

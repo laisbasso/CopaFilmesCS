@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI.csproj": {}
+    "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesTeste\\CopaFilmesTeste\\CopaFilmesTeste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI.csproj": {
+    "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesTeste\\CopaFilmesTeste\\CopaFilmesTeste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI.csproj",
-        "projectName": "CopaFilmesAPI",
-        "projectPath": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesTeste\\CopaFilmesTeste\\CopaFilmesTeste.csproj",
+        "projectName": "CopaFilmesTeste",
+        "projectPath": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesTeste\\CopaFilmesTeste\\CopaFilmesTeste.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesTeste\\CopaFilmesTeste\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,24 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -48,9 +66,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

@@ -15,7 +15,6 @@ export class FilmeService {
 
   getCampeoes(){
     return this.http.get("http://localhost:61397/filme/v1/resultado")
-
   }
 
   postFilmesSelecionados(filmes: Filme[]) {

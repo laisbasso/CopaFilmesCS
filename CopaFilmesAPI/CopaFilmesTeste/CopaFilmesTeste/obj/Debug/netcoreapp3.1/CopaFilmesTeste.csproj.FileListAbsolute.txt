@@ -1,0 +1,4 @@
+C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesTeste\CopaFilmesTeste\obj\Debug\netcoreapp3.1\CopaFilmesTeste.csprojAssemblyReference.cache
+C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesTeste\CopaFilmesTeste\obj\Debug\netcoreapp3.1\CopaFilmesTeste.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesTeste\CopaFilmesTeste\obj\Debug\netcoreapp3.1\CopaFilmesTeste.AssemblyInfo.cs
+C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesTeste\CopaFilmesTeste\obj\Debug\netcoreapp3.1\CopaFilmesTeste.csproj.CoreCompileInputs.cache

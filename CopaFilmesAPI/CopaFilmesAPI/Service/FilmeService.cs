@@ -1,22 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using CopaFilmesAPI.Models;
+﻿using CopaFilmesAPI.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using System.Linq;
+using System.Threading.Tasks;
 
-namespace CopaFilmesAPI.Controllers
+namespace CopaFilmesAPI.Service
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class FilmeController : ControllerBase
+    public class FilmeService : IFilmeService
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        // construtor
-        public FilmeController(IHttpClientFactory clientFactory)
+        //construtor
+        public FilmeService(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }
@@ -24,7 +22,6 @@ namespace CopaFilmesAPI.Controllers
         public IEnumerable<FilmeModel> ListaIEnumerable { get; set; }
         public List<FilmeModel> ListaFilmes;
 
-        [HttpGet]
         public async Task<List<FilmeModel>> GetAllFilmes()
         {
             var request = new HttpRequestMessage(HttpMethod.Get,
@@ -54,23 +51,23 @@ namespace CopaFilmesAPI.Controllers
             return ListaFilmes;
         }
 
-        public List<FilmeModel> gerarOrdemAlfabetica(List<FilmeModel> ListaFilmes)
+        public List<FilmeModel> GerarOrdemAlfabetica(List<FilmeModel> ListaFilmes)
         {
             ListaFilmes.Sort((x, y) => string.Compare(x.Titulo, y.Titulo));
 
             return ListaFilmes;
         }
 
-        public List<FilmeModel> faseEliminatoria(List<FilmeModel> ListaFilmes)
+        public List<FilmeModel> FaseEliminatoria(List<FilmeModel> ListaFilmes)
         {
             List<FilmeModel> FilmesVencedores = new List<FilmeModel>();
 
-            int posicaoB = ListaFilmes.Count()-1;
+            int posicaoB = ListaFilmes.Count() - 1;
 
             for (int posicaoA = 0; posicaoA < posicaoB; posicaoA++)
             {
-               int posicaoVencedora = ListaFilmes[posicaoA].Nota >= ListaFilmes[posicaoB].Nota ?
-                    posicaoA : posicaoB;
+                int posicaoVencedora = ListaFilmes[posicaoA].Nota >= ListaFilmes[posicaoB].Nota ?
+                     posicaoA : posicaoB;
 
                 FilmesVencedores.Add(ListaFilmes[posicaoVencedora]);
                 posicaoB--;
@@ -79,7 +76,7 @@ namespace CopaFilmesAPI.Controllers
             return FilmesVencedores;
         }
 
-        public List<FilmeModel> ultimoCombate(List<FilmeModel> ListaFilmes)
+        public List<FilmeModel> UltimoCombate(List<FilmeModel> ListaFilmes)
         {
             FilmeModel trocarElemento;
 
@@ -96,17 +93,21 @@ namespace CopaFilmesAPI.Controllers
         List<FilmeModel> ListaAlfabetica;
         List<FilmeModel> ListaSemifinal;
         List<FilmeModel> ListaFinal;
-        List<FilmeModel> ListaVencedores;
+        List<FilmeModel> ListaVencedores = new List<FilmeModel>();
 
-        [HttpPost]
         public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes)
         {
-            ListaAlfabetica = gerarOrdemAlfabetica(ListaFilmes);
-            ListaSemifinal = faseEliminatoria(ListaAlfabetica);
-            ListaFinal = faseEliminatoria(ListaSemifinal);
-            ListaVencedores = ultimoCombate(ListaFinal);
+            ListaAlfabetica = GerarOrdemAlfabetica(ListaFilmes);
+            ListaSemifinal = FaseEliminatoria(ListaAlfabetica);
+            ListaFinal = FaseEliminatoria(ListaSemifinal);
+            ListaVencedores = UltimoCombate(ListaFinal);
 
             return ListaVencedores;
         }
-     }
+
+        public List<FilmeModel> ExibirCampeoes()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

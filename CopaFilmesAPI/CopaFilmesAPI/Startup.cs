@@ -26,10 +26,10 @@ namespace CopaFilmesAPI
         {
             services.AddControllers();
 
-            // permite fazer requisições http
+            // permite fazer requisiï¿½ï¿½es http
             services.AddHttpClient();
 
-            // injeção de dependência, quando eu peço a interface, ele entrega o segundo
+            // injeï¿½ï¿½o de dependï¿½ncia, quando eu peï¿½o a interface, ele entrega o segundo
             //services.AddSingleton<ICampeonatoRepository, CampeonatoRepository>();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
@@ -60,7 +60,7 @@ namespace CopaFilmesAPI
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "v1/{controller=Filme}/");
-                // pq ele não cai direto na v1?
+                // pq ele nÃ£o cai direto na v1?
             });
         }
     }

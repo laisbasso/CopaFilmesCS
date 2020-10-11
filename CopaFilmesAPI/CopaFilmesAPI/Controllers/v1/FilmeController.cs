@@ -97,7 +97,7 @@ namespace CopaFilmesAPI.Controllers.v1
         List<FilmeModel> ListaAlfabetica;
         List<FilmeModel> ListaSemifinal;
         List<FilmeModel> ListaFinal;
-        List<FilmeModel> ListaVencedores;
+        List<FilmeModel> ListaVencedores = new List<FilmeModel>();
 
         [HttpPost("v1")]
         public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes)
@@ -115,12 +115,10 @@ namespace CopaFilmesAPI.Controllers.v1
         [HttpGet("v1/resultado")]
         public List<FilmeModel> ExibirCampeoes()
         {
-            // aqui da null
+            // aqui da null, se deixar com o new list dá array vazio
             //ListaVencedores = UltimoCombate(ListaFinal);
 
             // posso pegar direto no front do post? dai n precisa desse get
-
-         
 
             return ListaVencedores;
         }

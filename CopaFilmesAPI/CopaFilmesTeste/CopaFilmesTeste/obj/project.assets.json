@@ -901,6 +901,19 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "CopaFilmesAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CopaFilmesAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CopaFilmesAPI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -3494,10 +3507,16 @@
         "xunit.runner.visualstudio.2.4.0.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "CopaFilmesAPI/1.0.0": {
+      "type": "project",
+      "path": "../../CopaFilmesAPI/CopaFilmesAPI.csproj",
+      "msbuildProject": "../../CopaFilmesAPI/CopaFilmesAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CopaFilmesAPI >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "coverlet.collector >= 1.2.0",
       "xunit >= 2.4.0",
@@ -3529,7 +3548,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3569,6 +3592,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

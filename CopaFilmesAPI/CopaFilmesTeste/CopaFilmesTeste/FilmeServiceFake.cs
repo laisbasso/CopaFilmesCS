@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CopaFilmesAPI.Models;
+using CopaFilmesAPI.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CopaFilmesTeste
 {
@@ -9,7 +12,11 @@ namespace CopaFilmesTeste
         private readonly List<FilmeModel> _filme;
         public FilmeServiceFake()
         {
-            _filme = new List<FilmeModel>()
+
+            ////// WIP
+
+
+            _filme = new IEnumerable<FilmeModel>()
             {
                 new FilmeModel() {"id"="tt2854926","titulo"="Te Peguei!","ano"=2018,"nota"=7.1},
 
@@ -26,11 +33,34 @@ namespace CopaFilmesTeste
                 new FilmeModel() {"id"="tt6499752","titulo"="Upgrade","ano"=2018,"nota"=7.8}
             };
         }
-        public IEnumerable<FilmeModel> GetAllFilmes()
+
+        Task<List<FilmeModel>> IFilmeService.GetAllFilmes()
         {
-            return _filme;
+            throw new NotImplementedException();
         }
 
-        ////// WIP
+        public List<FilmeModel> GerarOrdemAlfabetica(List<FilmeModel> ListaFilmes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FilmeModel> FaseEliminatoria(List<FilmeModel> ListaFilmes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FilmeModel> UltimoCombate(List<FilmeModel> ListaFilmes)
+        {
+            throw new NotImplementedException();
+        }
+        public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FilmeModel> ExibirCampeoes()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

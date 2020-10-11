@@ -10,6 +10,8 @@ namespace CopaFilmesAPI.Controllers.v1
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
+        //List<FilmeModel> ListaTeste { get; set; }
+
         private readonly IFilmeService _service;
         public FilmeController(IFilmeService service)
         {
@@ -23,22 +25,25 @@ namespace CopaFilmesAPI.Controllers.v1
         }
 
         [HttpPost("v1")]
-        public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes) { 
+        public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes) {
+
+            //this.ListaTeste = _service.PostFilmesSelecionados(ListaFilmes);
 
             return _service.PostFilmesSelecionados(ListaFilmes);
         }
 
         //será que é uma boa deixar esse v1 aqui mesmo?
-        //[HttpGet("v1/resultado")]
-        //public List<FilmeModel> ExibirCampeoes()
-        //{
-        //    aqui da null, se deixar com o new list dá array vazio
-        //    ListaVencedores = UltimoCombate(ListaFinal);
+        [HttpGet("v1/resultado")]
+        public List<FilmeModel> ExibirCampeoes()
+        {
+            //    aqui da null, se deixar com o new list dá array vazio
+            //    ListaVencedores = UltimoCombate(ListaFinal);
 
-        //    posso pegar direto no front do post? dai n precisa desse get
+            //    posso pegar direto no front do post? dai n precisa desse get
 
-        //    return _service.PostFilmesSelecionados(ListaFilmes);
-        //}
+            return _service.ExibirCampeoes();
+            //return this.ListaTeste;
+        }
     }
 }
 

@@ -22,6 +22,10 @@ namespace CopaFilmesAPI.Service
         public IEnumerable<FilmeModel> ListaIEnumerable { get; set; }
         public List<FilmeModel> ListaFilmes;
 
+
+
+        public List<FilmeModel> ListaTestezinho { get; set; }
+
         public async Task<List<FilmeModel>> GetAllFilmes()
         {
             var request = new HttpRequestMessage(HttpMethod.Get,
@@ -93,7 +97,7 @@ namespace CopaFilmesAPI.Service
         List<FilmeModel> ListaAlfabetica;
         List<FilmeModel> ListaSemifinal;
         List<FilmeModel> ListaFinal;
-        List<FilmeModel> ListaVencedores = new List<FilmeModel>();
+        List<FilmeModel> ListaVencedores;
 
         public List<FilmeModel> PostFilmesSelecionados(List<FilmeModel> ListaFilmes)
         {
@@ -102,12 +106,14 @@ namespace CopaFilmesAPI.Service
             ListaFinal = FaseEliminatoria(ListaSemifinal);
             ListaVencedores = UltimoCombate(ListaFinal);
 
+            ListaTestezinho = ListaVencedores;
+
             return ListaVencedores;
         }
 
         public List<FilmeModel> ExibirCampeoes()
         {
-            throw new NotImplementedException();
+            return ListaTestezinho;
         }
     }
 }

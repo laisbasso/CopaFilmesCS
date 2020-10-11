@@ -22,14 +22,12 @@ namespace CopaFilmesAPI.Service
         public IEnumerable<FilmeModel> ListaIEnumerable { get; set; }
         public List<FilmeModel> ListaFilmes;
 
-
-
         public List<FilmeModel> ListaTestezinho { get; set; }
 
         public async Task<List<FilmeModel>> GetAllFilmes()
         {
             var request = new HttpRequestMessage(HttpMethod.Get,
-                "http://copafilmes.azurewebsites.net/api/filmes");
+                "http://copafilmes.azurewebsites.net/ai/filmes");
 
             var client = _clientFactory.CreateClient();
 
@@ -38,20 +36,23 @@ namespace CopaFilmesAPI.Service
 
             var response = await client.SendAsync(request);
 
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var responseStream = await response.Content.ReadAsStreamAsync();
-                ListaIEnumerable = await JsonSerializer.DeserializeAsync
-                    <IEnumerable<FilmeModel>>(responseStream);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseStream = await response.Content.ReadAsStreamAsync();
+                    ListaIEnumerable = await JsonSerializer.DeserializeAsync
+                        <IEnumerable<FilmeModel>>(responseStream);
 
-                ListaFilmes = ListaIEnumerable.ToList();
+                    ListaFilmes = ListaIEnumerable.ToList();
+                }
             }
-            else
+            catch (Exception e)
             {
-                // aqui é o erro, melhorar depois
                 ListaFilmes = new List<FilmeModel>();
+                Console.WriteLine("{0} Exception caught.", e);
             }
-
+        
             return ListaFilmes;
         }
 

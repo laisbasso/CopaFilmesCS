@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-campeonato',
   templateUrl: './campeonato.component.html',
-  styleUrls: ['./campeonato.component.css']
+  styleUrls: ['./campeonato.component.css'],
 })
 export class CampeonatoComponent implements OnInit {
   filme: Filme = new Filme();
@@ -28,6 +28,9 @@ export class CampeonatoComponent implements OnInit {
   getAllFilmes() {
     this.filmeService.getAllFilmes().subscribe((resp: Filme[]) => {
       this.listaFilmes = resp;
+      if (this.listaFilmes == null) {
+        this.router.navigate(['/error']);
+      }
     });
   }
 
@@ -63,14 +66,14 @@ export class CampeonatoComponent implements OnInit {
   }
 
   remover(filme) {
-    // no splice precisa colocar a posição, seguida da qtde de elementos que quer retirar    
+    // no splice precisa colocar a posição, seguida da qtde de elementos que quer retirar
     var i = this.filmesSelecionados.indexOf(filme);
     this.filmesSelecionados.splice(i, 1);
     console.log(this.filmesSelecionados);
   }
 
   toggleBotao(id) {
-    //this.toggle = !this.toggle;
+    this.toggle = !this.toggle;
     this.botaoAtivo = id;
   }
 
@@ -80,8 +83,9 @@ export class CampeonatoComponent implements OnInit {
     // quando deseleciona aparece a mensagem de selecionado
     // quando tem clique duplo a mensagem não muda
     // dadas as condições, optei por deixar a mensagem de 'SELECIONADO!' em vez de 'REMOVER'
-    id === this.botaoAtivo ? this.textoBotao= "SELECIONADO!" : this.textoBotao = "SELECIONAR";
+    id === this.botaoAtivo
+      ? (this.textoBotao = 'SELECIONADO!')
+      : (this.textoBotao = 'SELECIONAR');
     return this.textoBotao;
   }
-
 }

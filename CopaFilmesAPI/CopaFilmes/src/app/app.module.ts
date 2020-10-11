@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { ResultadoComponent } from './resultado/resultado.component';
 import { CampeonatoComponent } from './campeonato/campeonato.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CampeonatoComponent } from './campeonato/campeonato.component';
     HeaderComponent,
     FooterComponent,
     ResultadoComponent,
-    CampeonatoComponent
+    CampeonatoComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

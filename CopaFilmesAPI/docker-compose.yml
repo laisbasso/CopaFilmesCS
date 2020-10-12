@@ -11,9 +11,3 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-  copafilmes:
-    image: nginx
-    volumes:
-      - ./copafilmes/dist/copafilmes:/usr/share/nginx/html/
-    ports:
-      - "8080:8080"

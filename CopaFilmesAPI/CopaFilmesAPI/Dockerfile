@@ -18,9 +18,6 @@ RUN dotnet build "CopaFilmesAPI.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "CopaFilmesAPI.csproj" -c Release -o /app/publish
 
-RUN adduser -D copafilmesapi
-USER copafilmesapi
-
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .

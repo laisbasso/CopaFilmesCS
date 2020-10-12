@@ -7,12 +7,14 @@ C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\bin\Debug\netcor
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\bin\Debug\netcoreapp3.1\CopaFilmesAPI.runtimeconfig.dev.json
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\bin\Debug\netcoreapp3.1\CopaFilmesAPI.dll
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\bin\Debug\netcoreapp3.1\CopaFilmesAPI.pdb
+C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.csprojAssemblyReference.cache
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.AssemblyInfo.cs
+C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.RazorTargetAssemblyInfo.cache
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\staticwebassets\CopaFilmesAPI.StaticWebAssets.Manifest.cache
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\staticwebassets\CopaFilmesAPI.StaticWebAssets.xml
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.dll
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.pdb
 C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.genruntimeconfig.cache
-C:\Users\User\Desktop\CopaFilmesAPI\CopaFilmesAPI\CopaFilmesAPI\obj\Debug\netcoreapp3.1\CopaFilmesAPI.csprojAssemblyReference.cache

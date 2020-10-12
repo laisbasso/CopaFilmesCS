@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7nN6F7NHluigDxeCfbgbQboRO2lNR88uWAVNbHU9iBcYbyJDTHj3KTaKCZyv3o/IcFYAeYdoPDqi9OJ/jxshNw==",
+  "dgSpecHash": "t95khmqLbB7K7ArNvruS+opPH+hosBuY3dSsp+wDNNvMbVNlDq9XsUQ8SGX8tmmWd6cIENjFojRHttTWa6G+Sw==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\Desktop\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI\\CopaFilmesAPI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
   "logs": []
 }

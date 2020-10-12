@@ -8,9 +8,9 @@ Pegue seus 8 tickets e vamos te mostrar quais títulos mais conquistaram o cora�
 
 ## Screenshots
 
-![Página do campeonato](https://i.imgur.com/Y7Rr11Z.png "Campeonato")
+![Página do campeonato](https://i.imgur.com/JsjzLWo.png "Campeonato")
 
-![Página do resultado](https://i.imgur.com/GHt03Fq.png "Resultado")
+![Página do resultado](https://i.imgur.com/Nem6gdv.png "Resultado")
 
 ## Como funciona?
 

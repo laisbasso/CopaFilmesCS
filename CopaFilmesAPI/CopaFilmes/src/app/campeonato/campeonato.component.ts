@@ -28,10 +28,10 @@ export class CampeonatoComponent implements OnInit {
   getAllFilmes() {
     this.filmeService.getAllFilmes().subscribe((resp: Filme[]) => {
       this.listaFilmes = resp;
-      if (this.listaFilmes == null) {
-        this.router.navigate(['/error']);
-      }
     });
+    //if (this.listaFilmes == null) {
+    //  this.router.navigate(['/error']);
+    //}
   }
 
   postFilmesSelecionados() {

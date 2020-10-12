@@ -16,7 +16,7 @@ Pegue seus 8 tickets e vamos te mostrar quais títulos mais conquistaram o cora�
 
 Na página inicial é apresentada a proposta do Campeonato de Filmes, que tem como objetivo a otimização no processo de escolha de um filme, baseada nas preferências do usuário e na avaliação geral do público.
 
-O usuário é convidado a escolher os 8 títulos que mais lhe interessam, dentre uma lista de 16 filmes recebidas pela API externa. Esses filmes são expostos na página por meio do método `GET`.
+O usuário é convidado a escolher os 8 títulos que mais o interessam, dentre uma lista de 16 filmes recebidas pela API externa. Esses filmes são expostos na página por meio do método `GET`.
 
 O código de barras apresentado em cada ticket é gerado por uma fonte a partir da id do filme, então cada código é único! Legal, né? :)
 
@@ -24,7 +24,7 @@ Um contador regressivo acompanha a rolagem da tela e indica ao usuário quantos 
 
 Ao atingir a meta de 8 filmes escolhidos, um botão substitui o contador, que ao ser clicado faz o envio dos filmes escolhidos para a nossa API por meio do método `POST`.
 
-Caso tente selecionar um nono filme, um sweet alert informa que já foram escolhidos filmes suficientes e então ele é direcionado à página do resultado.
+Caso tente selecionar um nono filme, um sweet alert informa que já foram escolhidos filmes suficientes e então ele é redirecionado à página do resultado.
 
 A página seguinte exibe o resultado dos dois filmes mais bem avaliados de acordo com sua seleção anterior. Também está disponível um botão para fazer uma nova consulta.
 
@@ -132,7 +132,7 @@ O Campeonato de Filmes foi construído utilizando .NET Core 3.1.402 e Angular 10
 
 ## Segunda versão :fast_forward:
 
-* Indicação visual dos filmes que já foram escolhidos
+* Indicação visual de todos os filmes que já foram escolhidos
 * Implementação de filtro por gênero cinematográfico
 * Integração com plataforma de streaming
     * Login social
